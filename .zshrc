@@ -17,11 +17,14 @@ compinit
 
 alias ls='ls -G'
 alias gm='git checkout master; git pull --prune'
+alias gd='git checkout develop; git pull --prune'
+alias gbd='git branch | xargs git branch -d'
 
-eval "$(rbenv init -)"
-eval "$(nodenv init -)"
+type nodenv > /dev/null 2>&1 && eval "$(nodenv init -)"
 
 export RUBYOPT=-W:no-deprecated
+type rbenv > /dev/null 2>&1 && eval "$(rbenv init -)"
+
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+type pyenv > /dev/null 2>&1 && eval "$(pyenv init -)"
