@@ -16,7 +16,7 @@ autoload -Uz compinit
 compinit
 
 alias ls='ls -G'
-alias gm='git checkout master; git pull --prune'
+alias gm='(git checkout main || git checkout master); git pull --prune'
 alias gd='git checkout develop; git pull --prune'
 alias gbd='git branch | xargs git branch -d'
 
